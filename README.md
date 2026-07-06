@@ -43,3 +43,21 @@ Sugerencias y pull requests son bienvenidos.
 
 ## Licencia
 Revisa la licencia del proyecto (si aplica).
+
+## Seguridad
+- **No subas secretos:** No incluyas ` .env ` ni archivos con contraseñas en el repositorio.
+- **Usa ` .env.example `:** Copia ` .env.example ` a ` .env ` y rellena los valores en tu máquina local.
+- **Generar contraseñas seguras:** Usa generadores de contraseñas, por ejemplo:
+
+```bash
+# Genera 32 caracteres con OpenSSL
+openssl rand -base64 24
+
+# O con pwgen si está instalado
+pwgen 32 1
+```
+
+- **Alternativas seguras:** Considera usar Docker secrets, un gestor de secretos (HashiCorp Vault, AWS Secrets Manager) o variables de entorno proporcionadas por tu orquestador.
+- **Permisos y backups:** Protege los volúmenes que contienen `nextcloud/data` y las copias de seguridad; realiza backups regulares y restringe permisos de acceso.
+
+Si deseas, puedo añadir instrucciones para integrar Docker secrets o un ejemplo de script para generar `.env` desde variables de entorno.
